@@ -1,1 +1,165 @@
-(()=>{var e={414:e=>{const t=function(){const e=document;return{insertElement:function(t,n,r,s,o){const c=e.createElement(t);return c.className=n,c.textContent=r,"img"===t&&(c.src=o),s.appendChild(c),c},clearDom:function(e,t){const n=e.querySelectorAll(t);for(let t=0;t<n.length;t++)e.removeChild(n[t])},addDropDownMenu:function(e,t,n,r){t.addEventListener("click",(function(){!function(e,t,n){const r=e.getElementsByTagName("ul")[0],s=r.getElementsByTagName("li");if(!1===r.classList.contains(t)){r.classList.add(t);for(let e=0;e<s.length;e++)s[e].classList.add(n)}else if(!0===r.classList.contains(t)){r.classList.remove(t);for(let e=0;e<s.length;e++)s[e].classList.remove(n)}}(e,n,r)}))}}}();e.exports=t}},t={};function n(r){var s=t[r];if(void 0!==s)return s.exports;var o=t[r]={exports:{}};return e[r](o,o.exports,n),o.exports}n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e;return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var r in t)n.o(t,r)&&!n.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),(()=>{"use strict";n(414)})()})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/domDayHandler.js":
+/*!******************************!*\
+  !*** ./src/domDayHandler.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   insertDays: () => (/* binding */ insertDays)\n/* harmony export */ });\nconst insertDays = function(dataDays)\n{\n    console.log(dataDays)\n    if(dataDays !== \"error\")\n    {\n        for(let i = 0;i<dataDays.length;i++)\n    {\n        const forecastDay = dataDays[i].day\n        makeDay(forecastDay.avghumidity,forecastDay.avgtemp_c,forecastDay.condition.text,forecastDay.maxwind_kph,forecastDay.totalprecip_in)\n    }\n    }\n}\n\nconst makeDay = function(humidity,temp,condition,maxWind,rainChance)\n{\n    console.log(\"humidity: \"+humidity)\n    console.log(\"temperature: \"+temp)\n    console.log(\"Condition: \"+condition)\n    console.log(\"WindSpeed: \"+maxWind)\n    console.log(\"chance of rain: \"+rainChance)\n}\n\nconst removeDays = function()\n{\n\n}\n\n\n\n//# sourceURL=webpack://weather-web-odin-/./src/domDayHandler.js?");
+
+/***/ }),
+
+/***/ "./src/main.js":
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _domDayHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domDayHandler */ \"./src/domDayHandler.js\");\n\nasync function getData(city)\n{\n    try\n    {\n    const apikey = \"http://api.weatherapi.com/v1/forecast.json?key=54f04930550144f0b9c04423230710&q=\"+city+\"&days=3&aqi=yes&alerts=yes\"\n    const response = await fetch(apikey,{mode:\"cors\"})\n    const data = await response.json()\n    const dataDays = data.forecast.forecastday\n    localStorage.setItem(\"city\",data.location.name)\n    return dataDays\n    \n    }\n    catch(error)\n    {\n        return \"error\"\n    }\n\n\n}\n\n\n// const formInput = document.querySelector('.cityInput')\n// const formSubmit = document.querySelector('.submit')\n\n\n// formSubmit.addEventListener(\"click\",function(){\n//     insertDays(getData(formInput.value))\n//     document.querySelector('.city').value = formInput.value\n// })\n\nif(!localStorage.getItem(\"city\"))\n{\n    (0,_domDayHandler__WEBPACK_IMPORTED_MODULE_0__.insertDays)(await getData(\"London\"))\n    \n}\nelse\n{\n    console.log(localStorage.getItem(\"city\"))\n    ;(0,_domDayHandler__WEBPACK_IMPORTED_MODULE_0__.insertDays)(await getData(localStorage.getItem(\"city\")))\n}\n\n\n(0,_domDayHandler__WEBPACK_IMPORTED_MODULE_0__.insertDays)(await getData(\"Romania\"))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n// const weatherData = function(inputTemp,InputWind,InputCondition,inputRain,inputHumidity)\n// // {\n// //     const temp = inputTemp;\n// //     const rain = inputRain;\n// //     const wind = InputWind;\n// //     const condition = InputCondition;\n// //     const humidity = inputHumidity\n\n\n// //     return{temp,rain,wind,condition,humidity}\n\n// // }//\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://weather-web-odin-/./src/main.js?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/async module */
+/******/ 	(() => {
+/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
+/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
+/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
+/******/ 		var resolveQueue = (queue) => {
+/******/ 			if(queue && queue.d < 1) {
+/******/ 				queue.d = 1;
+/******/ 				queue.forEach((fn) => (fn.r--));
+/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
+/******/ 			}
+/******/ 		}
+/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
+/******/ 			if(dep !== null && typeof dep === "object") {
+/******/ 				if(dep[webpackQueues]) return dep;
+/******/ 				if(dep.then) {
+/******/ 					var queue = [];
+/******/ 					queue.d = 0;
+/******/ 					dep.then((r) => {
+/******/ 						obj[webpackExports] = r;
+/******/ 						resolveQueue(queue);
+/******/ 					}, (e) => {
+/******/ 						obj[webpackError] = e;
+/******/ 						resolveQueue(queue);
+/******/ 					});
+/******/ 					var obj = {};
+/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
+/******/ 					return obj;
+/******/ 				}
+/******/ 			}
+/******/ 			var ret = {};
+/******/ 			ret[webpackQueues] = x => {};
+/******/ 			ret[webpackExports] = dep;
+/******/ 			return ret;
+/******/ 		}));
+/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
+/******/ 			var queue;
+/******/ 			hasAwait && ((queue = []).d = -1);
+/******/ 			var depQueues = new Set();
+/******/ 			var exports = module.exports;
+/******/ 			var currentDeps;
+/******/ 			var outerResolve;
+/******/ 			var reject;
+/******/ 			var promise = new Promise((resolve, rej) => {
+/******/ 				reject = rej;
+/******/ 				outerResolve = resolve;
+/******/ 			});
+/******/ 			promise[webpackExports] = exports;
+/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
+/******/ 			module.exports = promise;
+/******/ 			body((deps) => {
+/******/ 				currentDeps = wrapDeps(deps);
+/******/ 				var fn;
+/******/ 				var getResult = () => (currentDeps.map((d) => {
+/******/ 					if(d[webpackError]) throw d[webpackError];
+/******/ 					return d[webpackExports];
+/******/ 				}))
+/******/ 				var promise = new Promise((resolve) => {
+/******/ 					fn = () => (resolve(getResult));
+/******/ 					fn.r = 0;
+/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
+/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
+/******/ 				});
+/******/ 				return fn.r ? promise : getResult();
+/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
+/******/ 			queue && queue.d < 0 && (queue.d = 0);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/main.js");
+/******/ 	
+/******/ })()
+;
