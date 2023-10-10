@@ -3,7 +3,7 @@ async function getData(city)
 {
     try
     {
-    const apikey = "http://api.weatherapi.com/v1/forecast.json?key=54f04930550144f0b9c04423230710&q="+city+"&days=3&aqi=yes&alerts=yes"
+    const apikey = "https://api.weatherapi.com/v1/forecast.json?key=54f04930550144f0b9c04423230710&q="+city+"&days=3&aqi=yes&alerts=yes"
     const response = await fetch(apikey,{mode:"cors"})
     const data = await response.json()
     const dataDays = data.forecast.forecastday
