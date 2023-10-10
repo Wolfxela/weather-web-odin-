@@ -7,40 +7,44 @@ async function getData(city)
     const response = await fetch(apikey,{mode:"cors"})
     const data = await response.json()
     const dataDays = data.forecast.forecastday
-    localStorage.setItem("city",data.location.name)
-    return dataDays
+    localStorage.setItem("city",city)
+    return await dataDays
     
     }
     catch(error)
     {
+        alert("please insert a valid city!")
         return "error"
     }
 
 
 }
+const formInput = document.querySelector('.cityInput')
 
+document.addEventListener('keydown', function(event) {onEnter(event)});
 
-// const formInput = document.querySelector('.cityInput')
-// const formSubmit = document.querySelector('.submit')
+async function onEnter(event)
+{
+    if(event.keyCode === 13) {
+        console.log(formInput.value)
+        const city = await getData(formInput.value)
+        insertDays(city,formInput.value)
+        document.querySelector('.currentLocation').value = "We are currently in: " + formInput.value
+        formInput.textContent =""
+    }
 
-
-// formSubmit.addEventListener("click",function(){
-//     insertDays(getData(formInput.value))
-//     document.querySelector('.city').value = formInput.value
-//     localStorage.setItem("city",formInput.value)
-// })
+}
 
 if(!localStorage.getItem("city"))
 {
-    insertDays(await getData("London"))
+    insertDays(await getData("London"),"London")
     
 }
 else
 {
-    console.log(localStorage.getItem("city"))
-    insertDays(await getData(localStorage.getItem("city")))
+    console.log("hawo")
+    insertDays(await getData(localStorage.getItem("city")),localStorage.getItem("city"))
 }
-
 
 
 
