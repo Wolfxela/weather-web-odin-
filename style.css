@@ -1,0 +1,231 @@
+body
+{
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e2127;
+}
+.content
+{
+    background-color: white;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 30px;
+}
+.searchContent
+{
+    width: 60vw;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+form
+{
+    height: 30%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 40vh;
+}
+.displayContent
+{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 40px;
+}
+.taskHolder
+{
+    display: flex;
+    height: 30%;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 50px;
+}
+.taskName
+{
+    font-size: 3vw;
+    align-self: start;
+    padding-left: 7vw;
+    padding-bottom: 2vh;
+}
+.task
+{
+    width: 60%;
+    height: 70%;
+    display: flex;
+    box-shadow: 0px 0px 100px -60px gray;
+    gap: 1vw;
+    background: linear-gradient(to left, transparent 49.6% , grey 50%, transparent 10%);
+    border-radius: 10px;
+    border-width: 0px;
+    border-style: solid;
+}
+.task:hover
+{
+    border-width: 1px;
+    border-color: rgb(43, 144, 226);
+}
+.mainInfo
+{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.extraInfo
+{
+    padding-top: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+.condition
+{
+    text-align: center;
+    font-size: max(2vw,13px);
+}
+.temperature
+{
+    font-size: 3vw;
+    align-self: baseline;
+    padding-left: 3vw;
+    text-align: center;
+}
+label
+{
+    font-size: 3vw;
+}
+.inputBar
+{
+    height: 15%;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+input
+{
+    border-width: 2px;
+    padding: 0px;
+    margin: 0px;
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+    width: 60%;
+    height: 93%;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 2vw;
+    opacity: 0.6;
+    background-color: rgba(255, 255, 255, 0.267);
+    color: black;
+}
+input:focus-visible
+{
+    padding: 0px;
+    margin: 0px;
+    border-width: 2px;
+    border-color: black;
+    border-right: 0px;
+    border-style: solid;
+    text-align: center;
+    width: 60%;
+    height: 93%;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 2vw;
+}
+.submitBtn
+{
+    padding: 0px;
+    margin: 0px;
+    border-color: black;
+    border-left: 0px;
+    border-style: solid;
+    width: 15%;
+    height: 100%;
+    font-size: 2vw;
+    background-color: rgb(43, 144, 226);
+    border-radius: 0px 10px 10px 0px;
+    opacity: 0.6;
+}
+.stat
+{
+    font-size: max(1vw,10px);
+    color: grey;
+}
+img
+{
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+}
+.currentLocation
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 14vh;
+    right: 46vw;
+    font-size: 1vw;
+    border-radius: 10px;
+    background-color: rgba(191, 248, 255, 0.164);
+
+}
+@keyframes entered {
+    0%
+    {
+       transform: translate(1500px,0px);
+    }
+   
+    100% 
+    {
+       transform: translate(0px,0px);
+    }
+   }
+
+@keyframes exited {
+    0%
+    {
+       transform: translate(0px,0px);
+    }
+   
+    50% 
+    {
+       transform: translate(1500px,0px);
+    }
+    100%
+    {
+        transform: translate(0px,0px);
+    }
+   }
+ .today
+{
+    animation: entered 1s ease-in-out 0s 1 normal forwards;
+}
+.tomorow
+{
+    animation: entered 1.5s ease-in-out 0s 1 normal forwards;
+}
+.nextday
+{
+    animation: entered 2s ease-in-out 0s 1 normal forwards;
+} 

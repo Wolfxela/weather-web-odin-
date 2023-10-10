@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="./domDayHandler.js" defer></script>
     <script src="./main.js" defer></script>
 </head>
 <body>
     <div class="content">
 
-        <div class="searchContent">
 
-            <img src="" alt="">
-            <form action="" onsubmit="event.preventDefault">
+        <div class="searchContent">
+            <div class="currentLocation">We're currently in: London</div>
+
+            <img src="./images/weather.jpg" alt="">
+            <form action="" onsubmit="event.preventDefault()">
             
 
 
-                <label for="inputCity"></label>
+                <label for="inputCity">Where shall we check next?</label>
                 <div class="inputBar">
-                    <input type="text" name="" id="inputCity" required maxlength="16" placeholder="London...">
-                    <button class="submitBtn" type="submit">Search!</button>
+                    <input type="text" class="cityInput" name="" id="inputCity" required maxlength="16">
+
                 </div>
 
 
@@ -30,56 +33,57 @@
         </div>
         <div class="displayContent">
 
-            <div class="taskHolder">
+            <div class="taskHolder  today">
                 <div class="taskName">Today</div>
                 <div class="task">
                     <div class="mainInfo">
 
-                        <div class="condition">Sunny day today!</div>
-                        <div class="temperature">30C</div>
+                        <div class="temperature">69°</div>
+                        <div class="condition">Foxy</div>
+                        
 
                     </div>
                     <div class="extraInfo">
 
-                        <div class="humidity">humidity:30%</div>
-                        <div class="rain">chance of rain:30%</div>
-                        <div class="wind">wind speed:30km/h</div>
+                        <div class="stat humidity">humidity:30%</div>
+                        <div class="stat rain">chance of rain:30%</div>
+                        <div class="stat wind">wind speed:30km/h</div>
 
                     </div>
                 </div>
             </div>
-            <div class="taskHolder">
+            <div class="taskHolder  tomorow">
                 <div class="taskName">Tomorow</div>
                 <div class="task">
                     <div class="mainInfo">
 
-                        <div class="condition">Sunny day today!</div>
-                        <div class="temperature">30C</div>
+                        <div class="temperature">30°</div>
+                        <div class="condition">Sunny</div>
 
                     </div>
                     <div class="extraInfo">
 
-                        <div class="humidity">humidity:30%</div>
-                        <div class="rain">chance of rain:30%</div>
-                        <div class="wind">wind speed:30km/h</div>
+                        <div class="stat humidity">humidity:30%</div>
+                        <div class="stat rain">chance of rain:30%</div>
+                        <div class="stat wind">wind speed:30km/h</div>
 
                     </div>
                 </div>
             </div>
-            <div class="taskHolder">
-                <div class="taskName">The Day after</div>
+            <div class="taskHolder nextday">
+                <div class="taskName ">The Day after</div>
                 <div class="task">
                     <div class="mainInfo">
 
-                        <div class="condition">Sunny day today!</div>
-                        <div class="temperature">30C</div>
+                        <div class="temperature">20°</div>
+                        <div class="condition">Rainy</div>
 
                     </div>
                     <div class="extraInfo">
 
-                        <div class="humidity">humidity:30%</div>
-                        <div class="rain">chance of rain:30%</div>
-                        <div class="wind">wind speed:30km/h</div>
+                        <div class="stat humidity">humidity:30%</div>
+                        <div class="stat rain">chance of rain:30%</div>
+                        <div class="stat wind">wind speed:30km/h</div>
 
                     </div>
                 </div>
